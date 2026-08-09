@@ -1,0 +1,9 @@
+/node_modules/
+/ml/target/
+*.log
+*.pem
+*.p12
+*client_secret*.json
+*credentials*.json
+*token*.json
+/.env

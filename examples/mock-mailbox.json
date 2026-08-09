@@ -1,0 +1,14 @@
+[
+  {
+    "id": "mock-1",
+    "from": "billing@example.test",
+    "subject": "Invoice 1042 ready",
+    "snippet": "Your fictional service invoice is available."
+  },
+  {
+    "id": "mock-2",
+    "from": "builds@example.test",
+    "subject": "Release pipeline completed",
+    "snippet": "The synthetic deployment passed all checks."
+  }
+]

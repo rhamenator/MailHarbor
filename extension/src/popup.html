@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mail Harbor</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header><p class="eyebrow">Review-first organizer</p><h1>Mail Harbor</h1><p id="mode">Checking mode…</p></header>
+  <div class="actions"><button id="connect">Connect mailbox</button><button id="disconnect" class="secondary">Disconnect</button><button id="dry-run">Run dry review</button></div>
+  <p class="privacy">Subject, sender, snippet, rules, and corrections stay in this browser. Nothing is used to train a generalized model.</p>
+  <section id="results" aria-live="polite"></section>
+  <button id="apply" class="apply" disabled>Apply selected labels</button>
+  <p id="status" role="status"></p>
+  <footer><a href="options.html" target="_blank">Rules and privacy</a></footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

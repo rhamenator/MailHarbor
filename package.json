@@ -1,0 +1,10 @@
+{
+  "name": "mail-harbor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:wasm": "wasm-pack build ml --target web --release --out-dir ../extension/wasm --out-name mail_harbor_ml",
+    "test": "node --test",
+    "verify:no-credentials": "node scripts/verify-no-credentials.mjs"
+  }
+}

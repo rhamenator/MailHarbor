@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-build-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+          components: rustfmt, clippy
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: cargo fmt --manifest-path ml/Cargo.toml -- --check
+      - run: cargo clippy --manifest-path ml/Cargo.toml --all-targets -- -D warnings
+      - run: cargo test --manifest-path ml/Cargo.toml
+      - run: cargo install wasm-pack --locked --version 0.15.0
+      - run: npm run build:wasm
+      - run: npm test
+      - run: npm audit --audit-level=high
+      - run: npm run verify:no-credentials
+      - uses: rustsec/audit-check@v2
+        with:
+          working-directory: ml
+          token: ${{ secrets.GITHUB_TOKEN }}

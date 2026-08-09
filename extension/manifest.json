@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Mail Harbor",
+  "version": "0.1.0",
+  "description": "Local, review-first mailbox labeling suggestions.",
+  "permissions": ["identity", "storage"],
+  "host_permissions": ["https://gmail.googleapis.com/*"],
+  "oauth2": {
+    "client_id": "REPLACE_WITH_CHROME_EXTENSION_OAUTH_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/gmail.modify"]
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Mail Harbor",
+    "default_popup": "src/popup.html"
+  },
+  "options_page": "src/options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

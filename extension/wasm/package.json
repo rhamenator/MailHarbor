@@ -1,0 +1,15 @@
+{
+  "name": "mail-harbor-ml",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "mail_harbor_ml_bg.wasm",
+    "mail_harbor_ml.js",
+    "mail_harbor_ml.d.ts"
+  ],
+  "main": "mail_harbor_ml.js",
+  "types": "mail_harbor_ml.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
