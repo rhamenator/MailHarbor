@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/assets/logo.png" alt="MailHarbor logo" width="220">
+</p>
+
 # Mail Harbor
 
 Mail Harbor is a Manifest V3 browser extension for local, review-first mailbox
